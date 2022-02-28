@@ -10,23 +10,23 @@ single integer to itself in order to obtain the target sum.
 You can assume that there will be at most one pair of numbers summing up to the target sum.
 """
 
-# This is an implementation using Hash Tables
-# Time Complexity: O(n^2)    |    Space Comaplexity: O(1)
+# (ht_impl): This is an implementation using Hash Tables
+# Time Complexity: O(n)    |    Space Comaplexity: O(n)
 
 
-def twoNumberSum(numberList, targetSum):
-    for i in range(len(numberList) - 1):
-        firstNumber = numberList[i]
-        for j in range(i + 1, len(numberList)):
-            secondNumber = numberList[j]
-            if (firstNumber + secondNumber == targetSum):
-                return [firstNumber, secondNumber]
+def twoNumberSum(numbers, targetSum):
+    store = {}
+    for i in numbers:
+        targetNumber = targetSum - i
+        if targetNumber in store:
+            return [targetNumber, i]
+        else:
+            store[i] = 1
     return []
 
 
 if __name__ == '__main__':
+    numberList = [3, 5, 8, 9, 1, 2, 10]
+    targetSum = 5
 
-    numbers = [3, 5, -4, 8, 11, 1, -1, 6]
-    target = 10
-
-    print(twoNumberSum(numbers, target))
+    print(twoNumberSum(numberList, targetSum))
