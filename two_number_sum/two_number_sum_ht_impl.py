@@ -10,6 +10,7 @@ single integer to itself in order to obtain the target sum.
 You can assume that there will be at most one pair of numbers summing up to the target sum.
 """
 
+# This is an implementation using Hash Tables
 # Time Complexity: O(n^2)    |    Space Comaplexity: O(1)
 
 
