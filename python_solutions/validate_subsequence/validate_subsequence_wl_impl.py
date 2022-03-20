@@ -11,8 +11,15 @@ def isValidSubsequence(array, subsequence):
     subsequenceindex = 0
     arrayIndex = 0
 
+    if len(array) == 0 or len(subsequence) == 0:
+        return False
+
     while subsequenceindex < len(subsequence) and arrayIndex < len(array):
         if subsequence[subsequenceindex] == array[arrayIndex]:
             subsequenceindex += 1
         arrayIndex += 1
     return subsequenceindex == len(subsequence)
+
+
+if __name__ == '__main__':
+    print(isValidSubsequence([1, 2, 3, 4, 5, 6, 7], []))

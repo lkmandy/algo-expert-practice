@@ -9,6 +9,10 @@ whether the second array is a subsequence of the first one.
 
 def isValidSubsequence(array, subsequence):
     subsequenceIndex = 0
+
+    if len(array) == 0 or len(subsequence) == 0:
+        return False
+
     for element in array:
         if subsequenceIndex == len(subsequence):
             break
@@ -18,4 +22,4 @@ def isValidSubsequence(array, subsequence):
 
 
 if __name__ == '__main__':
-    print(isValidSubsequence([1, 2, 3, 4, 5, 6, 7], [7, 5]))
+    print(isValidSubsequence([1, 2, 3, 4, 5, 6, 7], []))
