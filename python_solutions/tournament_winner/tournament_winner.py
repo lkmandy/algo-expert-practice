@@ -30,31 +30,6 @@
 
 
 def tournamentWinner(competitions, results):
-    if len(competitions) > 0:
-        totalTeamPoints = []
-        loopTracker = 0
-        points = 3
-        while loopTracker < len(competitions):
-            if results[loopTracker] == 1:
-                # totalTeamPoints.append([competitions[loopTracker][0], points])
-                # if totalTeamPoints[loopTracker][0] in totalTeamPoints[loopTracker]:
-                #     points + 3
-                totalTeamPoints.append(competitions[loopTracker][0])
-            else:
-                # totalTeamPoints.append([competitions[loopTracker][1], points])
-                # if totalTeamPoints[loopTracker][1] in totalTeamPoints[loopTracker]:
-                #     points + 3
-                totalTeamPoints.append(competitions[loopTracker][1])
-
-            loopTracker += 1
-            i = 0
-            winner = []
-        while i < len(totalTeamPoints):
-            j = totalTeamPoints.count(totalTeamPoints[i]) * 3
-            f = totalTeamPoints[i]
-            winner.append(f)
-            winner.append(j)
-            i += 1
 
     return winner
 
@@ -62,10 +37,8 @@ def tournamentWinner(competitions, results):
 if __name__ == "__main__":
     competitions = [
         ["HTML", "C#"],
-        ["Python", "C#"],
+        ["C#", "Python"],
         ["Python", "HTML"],
     ]
-
-    results = [0, 1, 1]
-
+    results = [0, 0, 1]
     print(tournamentWinner(competitions, results))
